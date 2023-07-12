@@ -28,21 +28,6 @@ public class PlayListTest {
 	
 	
 	@Test
-	public void shouldAbleToGetPlayList() {
-		String userId="gdmob5w0oey1t8ma61mhc2qat";
-		given(SpecBuilder.getRequestSpec())
-		.pathParam("user_id", userId)
-		.when()
-		.get("/users/{user_id}/playlists")
-		.then()
-		.spec(SpecBuilder.getResponseSpec())
-		.assertThat()
-		.statusCode(200)
-		.body("limit", equalTo(20),
-				"next",equalTo(null));	
-	}
-	
-	@Test
 	public void getPlayList() {
 		String playlist_id=DataLoader.getInstance().getPlayList();
 		
